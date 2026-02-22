@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOOD BOARD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #800020;
+      --primary-dark: #4A0E0E;
+      --secondary: #D47386;
+      --card: #F5F5F5;
+    }
+
+    body { 
+      background: radial-gradient(circle, #5e0d11 0%, #4A0E0E 100%);
+      color: #3d2b2b;
+      max-width: 900px;
+      margin: auto; 
+      padding: 60px 20px;
+      font-family: Verdana, sans-serif;
+      font-size: 14px;
+    }
+
+    h1 { 
+      text-align: center; 
+      color: var(--card);
+      font-family: 'Playfair Display', serif; 
+      font-size: 38px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 60px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 3px;
+      background-color: var(--card);
+      border-radius: 2px;
+    }
+
+    /* Style des titres de catégories */
+    .category-header {
+      grid-column: 1 / -1; /* Force le titre à prendre toute la largeur de la grille */
+      text-align: center;
+      margin: 40px 0 20px 0;
+      color: var(--card);
+    }
+
+    .category-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      text-transform: capitalize;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    .category-header p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    /* Grille de Portraits */
+    .mood-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 400px; /* Augmenté pour un format portrait plus haut */
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .mood-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.4s ease;
+      background-color: var(--primary-dark);
+    }
+
+    .mood-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+      transition: all 0.5s ease;
+    }
+
+    .mood-item:hover {
+      transform: translateY(-5px);
+      z-index: 5;
+    }
+
+    .mood-item:hover img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 15px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 50px;
+    }
+
+    footer a { color: #fff; text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .mood-container { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 350px; }
+    }
+    @media (max-width: 480px) {
+      .mood-container { grid-template-columns: 1fr; grid-auto-rows: 450px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mood Board Wedding</h1>
+
+  <div class="category-header">
+    <h2>Bride's Second Look</h2>
+    <p>Lady Pipa, Revolve</p>
+  </div>
+  
+  <div class="mood-container">
+    <div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_kaela_marfil_2-3.jpg?v=1768843676&width=600" alt="Kaela">
+      <div class="overlay">LadyPipa Kaela</div>
+    </div>
+    <div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_florence_marfil_2-3.jpg?v=1768841782&width=600" alt="Florence">
+      <div class="overlay">LadyPipa Florence</div>
+    </div>
+    <div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_florence_marfil_4-3.jpg?v=1768841782&width=600" alt="Florence">
+      <div class="overlay">LadyPipa Florence</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://is4.revolveassets.com/images/p4/n/z/AYAR-WD148_V1.jpg" alt="Revolve">
+      <div class="overlay">Revolve Brise</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://img1.shopcider.com/product/1766729698000-eXPcRz.jpg?x-oss-process=image/resize,w_1400,m_lfit/quality,Q_80/interlace,1" alt="Cider">
+      <div class="overlay">Cider</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://cdn-img.prettylittlething.com/f/3/b/4/f3b47f30f0b980efc60dbf34e750d2bf9b66181d_CNI2695_2_premium_white_woven_tie_halter_neck_dress.jpg?imwidth=600" alt="Pretty Little Things">
+      <div class="overlay">Pretty Little Things</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/vestido-rabat-lp-white-1-1.jpg?v=1763387077&width=1000" alt="Rabat">
+      <div class="overlay">LadyPipa Rabat</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_simona_crema_5-3.jpg?v=1768842565&width=600" alt="Simona">
+      <div class="overlay">LadyPipa Simona</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_simona_crema_6-3.jpg?v=1768842565&width=600" alt="Simona">
+      <div class="overlay">LadyPipa Simona</div>
+    </div>
+  </div>
+
+  <div class="category-header">
+    <h2>Demoiselles d'honneur (nuances de rose)</h2>
+    <p>Lady Pipa, Azazie, The Are, Mango, Pretty Lavish, Vero Moda, Jardin Vue, Miphai</p>
+  </div>
+
+  <div class="mood-container">
+    <div class="mood-item">
+        <img src="https://ladypipa.com/cdn/shop/files/LADYPIPA_vestido_simona_rose_1.jpg?v=1770025160&width=600" alt="Simona">
+        <div class="overlay">LadyPipa Simona</div>
+    </div>
+    <div class="mood-item">
+        <img src="https://ladypipa.com/cdn/shop/files/vestido-rania-rose-1-1.jpg?v=1763374487&width=1000" alt="Rania">
+        <div class="overlay">LadyPipa Rania</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://images.veromoda.com/10329767/4751060/003/veromoda-vmfeliciaslruffleshortdressexp-rose.jpg?v=7edffde2a8f68977d55eead50cec8bd9&format=webp&width=1280&quality=90&key=25-0-3&bg-color=%23f5f5f5" alt="Vero Moda">
+        <div class="overlay">Vero Moda VMFelicia</div>
+    </div>
+    <div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/cb/5d/8ba8d3fbca3a9af17ca48b1a3457cb5d.jpg.webp" alt="Azazie Kieryn">
+        <div class="overlay">Azazie Kieryn</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/cd/07/40258544931acadd5cf1a7754704cd07.jpg.webp" alt="Azazie Kieryn">
+        <div class="overlay">Azazie Kieryn</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/dd/70/f436cfd0b43745c60305916bbc9cdd70.jpg.webp" alt="Azazie Johana">
+        <div class="overlay">Azazie Johana</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.the-are.com/cdn/shop/files/vestido-midi-escote-halter-falda-volante-invitada-mujer-the-are-1_640x_crop_center.jpg?v=1741599911" alt="The Are">
+        <div class="overlay">The Are Victoria</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.the-are.com/cdn/shop/files/w-IMG_7972_640x_crop_center.jpg?v=1744904947" alt="The Are">
+        <div class="overlay">The Are Ubeda</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/0c/33/287eb014ee8b024773f7b11ca48c0c33.jpg.webp" alt="Azazie Sarella">
+        <div class="overlay">Azazie Sarella</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/7b/1d/2e0b1c28265e36f006bd503a003a7b1d.jpg.webp" alt="Azazie Jemma">
+        <div class="overlay">Azazie Jemma</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/b4/64/e7d86ebb9b08f41b9ab998a9441cb464.jpg.webp" alt="Azazie Aaida">
+        <div class="overlay">Azazie Aaida</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/dd/b8/fdeea428544c30ca63fa7572f557ddb8.jpeg.webp" alt="Azazie Saige">
+        <div class="overlay">Azazie Saige</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Serita_V_Neck_Tiered_Maxi_Fuschia_Satin_4240_d505cf88-9a91-404f-9f0f-65109d615ce7.jpg?v=1770731878&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Serita</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://shop.mango.com/assets/rcs/pics/static/T2/fotos/outfit/S/27071192_88-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1770204816393" alt="Mango">
+        <div class="overlay">Mango Fuchsia</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/b6/95/7baa37339bcc306cad54002f8170b695.jpg.webp" alt="Azazie">
+        <div class="overlay">Azazie Brynn</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Keisha_Blush_1278.jpg?v=1769787694&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Keisha</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Ola_Sweetheart_Frill_Maxi_Pink_Lilac_Abstract_1045.jpg?v=1754310247&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Ola Sweetheart Frill</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdn-1.azazie.com/upimg/h65/81/de/30a4fd412a3396ffb2a51c6ec43a81de.jpg.webp" alt="Azazie Evadne">
+        <div class="overlay">Azazie Evadne</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Carrie_Tulle_Maxi_Peony_Pink_598.jpg?v=1744572673&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Carri Tulle</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.miphai.com/cdn/shop/files/vestido_invitada_fiesta_largo_lotus_buganvilla_principal.jpg?v=1728038152&width=2160" alt="Miphai">
+        <div class="overlay">Miphai Lotus Bougainvillée</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Piper_Ruffle_Maxi_Dress_Fuschia_1467_crop.jpg?v=1745797823&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Piper</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://img-va.myshopline.com/image/store/1713208398308/J2504204166_990x.jpeg?w=1213&h=1820&q=100" alt="JardinVue">
+      <div class="overlay">JardinVue 3D Flower</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://img-va.myshopline.com/image/store/1713208398308/J2504204166-(1)_990x.jpeg?w=1213&h=1820&q=100" alt="JardinVue">
+      <div class="overlay">JardinVue 3D Flower</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.miphai.com/cdn/shop/files/Pipa_buganvilla.jpg?v=1737023062&width=2160" alt="Miphai">
+        <div class="overlay">Miphai Pipe Bougainvillée</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://img-va.myshopline.com/image/store/1713208398308/J2405261008-(3)_700x.jpeg?w=700&h=1050&q=100" alt="JardinVue">
+      <div class="overlay">JardinVue 3D Floral High Neck</div>
+    </div>
+	<div class="mood-item">
+      <img src="https://img-va.myshopline.com/image/store/1713208398308/10001-137_990x.jpeg?w=2123&h=3184&q=100" alt="JardinVue">
+      <div class="overlay">JardinVue Solid Corset</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Edita_Cowl_Midaxi_Raspberry_2006_c630b543-e456-4fc2-8a6e-009cdd62033e.jpg?v=1770725758&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Edita Cowl Midaxi</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://prettylavish.co.uk/cdn/shop/files/Edita_Cowl_Midaxi_Raspberry_2056_626195ec-74c3-415b-8576-3d8a29b70945.jpg?v=1770725765&width=600" alt="Pretty Lavish">
+        <div class="overlay">Pretty Lavish Edita Cowl Midaxi</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://shop.mango.com/assets/rcs/pics/static/T1/fotos/outfit/S/17004090_85-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1752744749994" alt="Mango">
+        <div class="overlay">Mango Modal</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://cdna.lystit.com/300/375/tr/photos/asos/9d3cb67b/vila-pink-Robe-courte-en-satin-a-col-montant-avec-volants.jpeg" alt="ASOS">
+        <div class="overlay">ASOS Vila</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://shop.mango.com/assets/rcs/pics/static/T1/fotos/outfit/S/17001275_88-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1747919121433" alt="Mango">
+        <div class="overlay">Mango Robe Midi Bustier</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.miphai.com/cdn/shop/products/vestido_invitada_evento_Daniela_Magenta_vuelo.jpg?v=1728646236&width=2160" alt="Miphai">
+        <div class="overlay">Miphai Daniela</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.mangooutlet.com/assets/rcs/pics/static/T7/fotos/outfit/S/77070345_85-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1715934836078" alt="Mango">
+        <div class="overlay">Mango Outlet Bustier Drapée</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.miphai.com/cdn/shop/files/Vestido_invitada_Largo_Hera_Rosa_espalda.jpg?v=1729675944&width=2160" alt="Miphai">
+        <div class="overlay">Miphai Hera</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.miphai.com/cdn/shop/files/vestido_manuela_fucsia_andando.jpg?v=1737019561&width=2160" alt="Miphai">
+        <div class="overlay">Miphai Manuela</div>
+    </div>
+	<div class="mood-item">
+        <img src="https://www.mangooutlet.com/assets/rcs/pics/static/T6/fotos/outfit/S/67046339_85-99999999_01.jpg?imwidth=2048&imdensity=1&ts=1709291125412" alt="Mango">
+        <div class="overlay">Mango Outlet Asymétrique Noeud</div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2026 Hanaleï<br>Tous droits réservés</p>
+    <p>Contact : <a href="mailto:hanalei.bunn@gmail.com">hanalei.bunn@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>

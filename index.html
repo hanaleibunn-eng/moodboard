@@ -152,6 +152,22 @@
       }
     }
 	
+	/* On remonte l'image pour cacher le ciel et voir le bas de la robe */
+    .mood-item img.special-zoom {
+      object-fit: cover;
+      /* 100% signifie qu'on colle le BAS de la photo au BAS du cadre */
+      object-position: center 100%; 
+      /* On zoome un peu plus (1.3) pour éliminer le ciel inutile en haut */
+      transform: scale(1.3);
+      /* On s'assure que le zoom se fait par le bas */
+      transform-origin: bottom;
+    }
+
+    /* Ajustement au survol pour que ça reste propre */
+    .mood-item:hover img.special-zoom {
+      transform: scale(1.45);
+    }
+	
   </style>
 </head>
 <body>
@@ -249,6 +265,10 @@
         <div class="overlay">Miphai Lotus Bougainvillée</div>
     </div>
 	<div class="mood-item">
+      <img src="https://img-va.myshopline.com/image/store/1713208398308/J2405261008-(3)_700x.jpeg?w=700&h=1050&q=100" alt="JardinVue">
+      <div class="overlay">JardinVue 3D Floral High Neck</div>
+    </div>
+	<div class="mood-item">
       <img src="https://img-va.myshopline.com/image/store/1713208398308/J2504204166_990x.jpeg?w=1213&h=1820&q=100" alt="JardinVue">
       <div class="overlay">JardinVue 3D Flower</div>
     </div>
@@ -263,10 +283,6 @@
 	<div class="mood-item">
         <img src="https://www.miphai.com/cdn/shop/files/Pipa_buganvilla.jpg?v=1737023062&width=2160" alt="Miphai">
         <div class="overlay">Miphai Pipe Bougainvillée</div>
-    </div>
-	<div class="mood-item">
-      <img src="https://img-va.myshopline.com/image/store/1713208398308/J2405261008-(3)_700x.jpeg?w=700&h=1050&q=100" alt="JardinVue">
-      <div class="overlay">JardinVue 3D Floral High Neck</div>
     </div>
 	<div class="mood-item">
       <img src="https://img-va.myshopline.com/image/store/1713208398308/10001-137_990x.jpeg?w=2123&h=3184&q=100" alt="JardinVue">
@@ -301,8 +317,8 @@
         <div class="overlay">Mango Outlet Bustier Drapée</div>
     </div>
 	<div class="mood-item">
-      <img src="https://img.shopcider.com/hermes/video/1770780497000-ibwmxw.png?x-oss-process=image/resize,w_1400,m_lfit/quality,Q_80/format,webp" alt="Cider">
-      <div class="overlay">Cider Robe mini surdimensionnée à col V en paillettes</div>
+      <img src="https://img.shopcider.com/hermes/video/1770780497000-ibwmxw.png?x-oss-process=image/resize,w_1400,m_lfit/quality,Q_80/format,webp" alt="Cider" class="special-zoom">
+      <div class="overlay">Cider Robe mini col V</div>
     </div>
 	<div class="mood-item">
         <img src="https://www.miphai.com/cdn/shop/files/Vestido_invitada_Largo_Hera_Rosa_espalda.jpg?v=1729675944&width=2160" alt="Miphai">
